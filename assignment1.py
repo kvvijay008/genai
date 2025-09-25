@@ -1,11 +1,10 @@
-
 import requests
 import json
 
 def get_github_user(user_data):
     not_found_user = []
     for user_id in user_data:
-        url = f'https://github.com/{user_id}/genai/blob/main/assignment1.py'
+        url = f'https://raw.githubusercontent.com/{user_id}/genai/main/assignment1.py'
         response = requests.get(url)
         if response.status_code == 200:
             print(user_id, 'submitted the file')
